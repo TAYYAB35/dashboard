@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js">
+    <link rel="stylesheet" href="./style/media.css">
+    <link rel="stylesheet" href="./style/style.css">
+    <title>Form</title>
+</head>
+
+<body>
+    <div class="navbar">
+        <p>CODESEARCH</p>
+
+        <div class="bt">
+            <ul>
+                <li>
+                    <!-- <img src="./images/Flag_of_Pakistan.png" alt="usa"> -->
+                    <a onclick="handleMenu()"> <i class="fa-solid fa-bars" id="hamburger" ></i></a>
+                </li>
+            </ul>
+        </div>
+        <ul id="menu-mobile">
+            <li>
+                <i class="fa-solid fa-calendar-days icon sidebar_expand_icon"></i>
+                <span class="menu-text">
+                    Dashboard
+                </span>
+            </li>
+            <li>
+                <i class="fa-solid fa-money-bill icon sidebar_expand_icon"></i>
+                <span class="menu-text">
+                    Utenti
+                </span>
+            </li>
+            <li>
+                <i class="fa-solid fa-mars-double icon sidebar_expand_icon"></i>
+                <span class="menu-text">
+                    Pro ponenti
+                </span>
+            </li>
+            <li>
+                <i class="fa-brands fa-squarespace icon sidebar_expand_icon"></i>
+                <span class="menu-text">
+                    Aggiun gi Deal
+                </span>
+            </li>
+            <li>
+                <i class="fa-solid fa-compass icon sidebar_expand_icon"></i>
+                <span class="menu-text">
+                    Menu Item
+                </span>
+            </li>
+
+        </ul>
+    </div>
+    <div class="container">
+        <div class="sidebar" id="sidebaar">
+            <i class="fa-solid fa-bars-staggered toggle" id="sidebar-icon" onclick="handleSidebar()"></i>
+            <ul id="menu">
+                <li>
+                    <i class="fa-solid fa-calendar-days icon sidebar_expand_icon"></i>
+                    <span class="menu-text">
+                        Dashboard
+                    </span>
+                </li>
+                <li>
+                    <i class="fa-solid fa-money-bill icon sidebar_expand_icon"></i>
+                    <span class="menu-text">
+                        Utenti
+                    </span>
+                </li>
+                <li>
+                    <i class="fa-solid fa-mars-double icon sidebar_expand_icon"></i>
+                    <span class="menu-text">
+                        Pro ponenti
+                    </span>
+                </li>
+                <li>
+                    <i class="fa-brands fa-squarespace icon sidebar_expand_icon"></i>
+                    <span class="menu-text">
+                        Aggiun gi Deal
+                    </span>
+                </li>
+                <li>
+                    <i class="fa-solid fa-compass icon sidebar_expand_icon"></i>
+                    <span class="menu-text">
+                        Menu Item
+                    </span>
+                </li>
+
+            </ul>
+        </div>
+
+        <div class="content f-width" id="content-container">
+            <div class="form">
+                <h2>My Dashboard</h2>
+                <div class="total">
+                    <div class="tot">
+                        <div class="divide">
+                            <div class="h">Total Investment</div>
+                            <div class="j"><span class="cl">$100,000,00</span></div>
+                        </div>
+                        <hr>
+                        <div class="divide divide-two">
+                            <div class="lm">
+                                <canvas id="myChart"></canvas>
+                            </div>
+                            <div class="ln" id="lnn">
+                                <div class="ln-1">
+                                    <span class="cl">+100.00</span>
+                                </div>
+                                <div class="ln-2"> Expected total to Return</div>
+                            </div>
+                        </div>
+                        <!-- <ul>
+                            <li>
+                                <h4><i class="fa-sharp fa-solid fa-circle" id="solid"></i> In Progress </h4>
+                                <span> <i class="fa-sharp fa-solid fa-circle"></i>In Progress</span>
+                            </li>
+                        </ul> -->
+                    </div>
+                    <div class="tot">
+                        <div class="divide">
+                            <div class="h">Principle Balance </div>
+                            <div class="j">2022 2023 <span class="cl">12 Months</span></div>
+                        </div>
+                        <hr>
+                        <div class="divide">
+
+                            <div class="lm">
+                                <canvas id="second"></canvas>
+                                <!-- <i class="fa-solid fa-chart-column"></i> -->
+                            </div>
+                            <div class="ln">
+                                <div class="ln-1">
+                                    <span class="cl">+7000</span>
+                                </div>
+                                <div class="ln-2"> Expected total to Return</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tot">
+                        <div class="divide">
+                            <div class="h">Return Balance</div>
+                            <div class="j">2022 2023 <span class="cl">12 Months</span></div>
+                        </div>
+                        <hr>
+                        <div class="divide">
+                            <div class="lm">
+                                <canvas id="third"></canvas>
+                            </div>
+                            <div class="ln">
+                                <div class="ln-1">
+                                    <span class="cl">+100</span>
+                                </div>
+                                <div class="ln-2"> Expected total to Return</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="active">
+                    <p>Active Investment</p>
+                    <hr>
+                    <div class="column">
+                        <div class="box cv">
+                            <div class="ln-3">
+                                <span class="cl">$15.00</span>
+                            </div>
+                            <div class="ln-4"> Stock</div>
+                        </div>
+                        <div class="box cv">
+                            <div class="ln-3">
+                                <span class="cl">$15.000,00</span>
+                            </div>
+                            <div class="ln-4"> Bonds</div>
+                        </div>
+                        <div class="box cv">
+                            <div class="ln-3">
+                                <span class="cl">$10000</span>
+                            </div>
+                            <div class="ln-4"> Funds</div>
+                        </div>
+                        <div class="box">
+                            <div class="ln-3">
+                                <span class="cl">$1000</span>
+                            </div>
+                            <div class="ln-4"> EFT's</div>
+                        </div>
+                        <div class="box">
+                            <div class="ln-3">
+                                <span class="cl">$67,000</span>
+                            </div>
+                            <div class="ln-4">Saving</div>
+                        </div>
+                        <div class="box">
+                            <div class="ln-3">
+                                <span class="cl">$5000</span>
+                            </div>
+                            <div class="ln-4">Crypto</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./script.js"></script>
+
+
+</body>
+
+</html>
